@@ -1,0 +1,10 @@
+flowchart TD
+    U[User] --> A[C++ User-Space Application]
+    A -->|ioctl| D[/dev/sysmon]
+    D --> K[Linux Character Device Driver]
+    K --> L[Linux Kernel]
+    L --> M[Memory Information]
+    L --> P[Process Information]
+    L --> T[System Uptime]
+    A --> S[/proc/stat]
+    S --> C[CPU Utilization]

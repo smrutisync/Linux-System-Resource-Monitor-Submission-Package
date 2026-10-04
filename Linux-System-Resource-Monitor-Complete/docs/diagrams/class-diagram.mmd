@@ -1,0 +1,22 @@
+classDiagram
+    class SystemMonitor {
+        -int deviceFd
+        +openDevice() bool
+        +closeDevice()
+        +run()
+        -showMenu()
+        -showKernelStats()
+        -showCpuUsage()
+        -readCpuUsage() double
+    }
+
+    class MemoryMonitor {
+        +display()
+    }
+
+    class ProcessMonitor {
+        +display()
+    }
+
+    SystemMonitor --> MemoryMonitor
+    SystemMonitor --> ProcessMonitor

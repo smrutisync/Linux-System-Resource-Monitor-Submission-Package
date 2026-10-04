@@ -1,0 +1,10 @@
+stateDiagram-v2
+    [*] --> Start
+    Start --> DeviceOpen
+    DeviceOpen --> Menu
+    Menu --> CPU
+    Menu --> KernelStats
+    CPU --> Menu
+    KernelStats --> Menu
+    Menu --> Exit
+    Exit --> [*]

@@ -1,0 +1,14 @@
+sequenceDiagram
+    actor User
+    participant App as C++ Application
+    participant Device as /dev/sysmon
+    participant Driver as Linux Driver
+    participant Kernel as Linux Kernel
+
+    User->>App: Select kernel statistics
+    App->>Device: ioctl(GET_STATS)
+    Device->>Driver: ioctl request
+    Driver->>Kernel: Collect statistics
+    Kernel-->>Driver: Statistics
+    Driver-->>App: copy_to_user()
+    App-->>User: Display statistics
